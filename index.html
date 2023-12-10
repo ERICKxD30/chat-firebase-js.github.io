@@ -43,6 +43,10 @@
 
       const firestore = firebase.firestore();
 
+      function limpiar() {
+        let caja = document.getElementById("texto").value = "";
+      }
+
       function agrega() {
         firestore.collection("MENSAJE").add({
           USUARIO: usuario,
@@ -50,6 +54,7 @@
           TIMESTAMP: firebase.firestore.FieldValue.serverTimestamp(),
           AVATAR: avatar,
         });
+        limpiar();
       }
 
       function muestraMensajes() {
